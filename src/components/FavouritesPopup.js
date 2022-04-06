@@ -40,6 +40,7 @@ const FavoritesPopup = ({ closePopup }) => {
               >
                 <ListItemAvatar>
                   <img
+                    alt={movie.title}
                     src={movie.movie_banner}
                     style={{
                       width: 40,
@@ -55,7 +56,7 @@ const FavoritesPopup = ({ closePopup }) => {
                   {movie.title}
                 </Typography>
               </ListItem>
-              {i != favoriteMovies.length - 1 && <Divider variant="inset" />}
+              {i !== favoriteMovies.length - 1 && <Divider variant="inset" />}
             </>
           ))}
           {favoriteMovies.length === 0 && (

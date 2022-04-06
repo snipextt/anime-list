@@ -15,15 +15,18 @@ const Feed = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetchFilms();
-  }, []);
   const fetchFilms = async () => {
     const data = await getFilms();
     setFilms(data);
     dispatch(setAllMovies(data));
     setLoading(false);
   };
+
+  useEffect(() => {
+    fetchFilms();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Container>
       <Typography variant="h5">Trending movies</Typography>

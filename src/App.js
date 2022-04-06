@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { CssBaseline, Paper, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import themes from "./_theme";
 import routes from "./_routes";
 import Header from "./components/Header";

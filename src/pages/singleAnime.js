@@ -42,13 +42,14 @@ const SingleAnime = () => {
     window.scrollTo(0, 0);
     setLoading(true);
     fetchSingleFilm();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchSingleFilm = async () => {
     const film = await getSingleFilm(id);
     const characters = await Promise.all(
       film.people
-        .filter((c) => !(c.split("/").pop() == ""))
+        .filter((c) => !(c.split("/").pop() === ""))
         .map((c) => getSingleCharacter(c))
     );
     setCharacters(characters);
@@ -134,6 +135,7 @@ const SingleAnime = () => {
             )}
             {!loading && (
               <img
+                alt={singleFilm.title}
                 src={singleFilm?.movie_banner}
                 style={{
                   maxWidth: "100%",

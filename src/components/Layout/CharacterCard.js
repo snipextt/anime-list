@@ -2,7 +2,6 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import FemaleIcon from "@mui/icons-material/Female";
@@ -18,7 +17,7 @@ const CharacterCard = ({ character }) => {
           <CardMedia
             component="img"
             alt={character.name}
-            image={character.gender == "Female" ? FemaleImage : MaleImage}
+            image={character.gender === "Female" ? FemaleImage : MaleImage}
             title={character.name}
           />
           <CardContent>
@@ -33,10 +32,10 @@ const CharacterCard = ({ character }) => {
               variant="body2"
             >
               Age - {character.age}&nbsp;&nbsp;&nbsp;&nbsp;
-              {character.gender == "Female" && (
+              {character.gender === "Female" && (
                 <FemaleIcon sx={{ color: "pink" }} />
               )}
-              {character.gender == "Male" && <MaleIcon color="primary" />}
+              {character.gender === "Male" && <MaleIcon color="primary" />}
               {character.gender}
             </Typography>
           </CardContent>

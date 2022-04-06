@@ -32,7 +32,7 @@ const Finder = ({ finderOpen, handleClose }) => {
         setMoviesFromSearch(filteredMovies);
       }
     }, 200);
-  }, [search]);
+  }, [search, allMovies]);
 
   return (
     <Modal
@@ -111,6 +111,7 @@ const Finder = ({ finderOpen, handleClose }) => {
                 >
                   <ListItemAvatar>
                     <img
+                      alt={movie.title}
                       src={movie.movie_banner}
                       style={{
                         width: 80,
