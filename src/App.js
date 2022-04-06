@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import themes from "./_theme";
+import routes from "./_routes";
+import Header from "./components/Header";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState(0);
+  const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themes[currentTheme]}>
+      <CssBaseline />
+      <Header />
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          {routes.map((route, i) => (
+            <Route key={i} path={route.path} element={route.component} />
+          ))}
+        </Routes>
+      </AnimatePresence>
+    </ThemeProvider>
   );
 }
 
