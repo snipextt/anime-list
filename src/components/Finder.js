@@ -66,7 +66,7 @@ const Finder = ({ finderOpen, handleClose }) => {
             lg: "45%",
           },
           border: 1,
-          borderColor: "#05D8FF",
+          borderColor: "background.paper",
           backgroundColor: "background.paper",
           borderRadius: "0.5rem",
         }}
@@ -86,7 +86,7 @@ const Finder = ({ finderOpen, handleClose }) => {
         />
         <Paper
           sx={{
-            height: "380px",
+            height: "340px",
             // background: "#10101f",
             overflowY: "scroll",
           }}
