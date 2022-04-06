@@ -17,7 +17,6 @@ import { motion } from "framer-motion";
 const Finder = ({ finderOpen, handleClose }) => {
   const navigate = useNavigate();
   const allMovies = useSelector((state) => state.movies.allMovies);
-  console.log(allMovies);
 
   const [moviesFromSearch, setMoviesFromSearch] = useState([]);
   const [search, setSearch] = useState("");
@@ -59,7 +58,7 @@ const Finder = ({ finderOpen, handleClose }) => {
       aria-describedby="modal-modal-description"
     >
       <Box
-        bgcolor={"#1C1C2A"}
+        // bgcolor={}
         sx={{
           width: {
             xs: "90%",
@@ -88,7 +87,7 @@ const Finder = ({ finderOpen, handleClose }) => {
         <Paper
           sx={{
             height: "380px",
-            background: "#10101f",
+            // background: "#10101f",
             overflowY: "scroll",
           }}
         >

@@ -18,8 +18,8 @@ const FavoritesPopup = ({ closePopup }) => {
         sx={{
           border: 1,
           width: 280,
-          borderColor: "#8C4FFF",
-          background: "#10101F",
+          borderColor: "primary",
+          // background: "#10101F",
           maxHeight: 350,
           overflowY: "scroll",
         }}
